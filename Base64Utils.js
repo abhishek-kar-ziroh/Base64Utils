@@ -23,7 +23,11 @@ const Base64Utils = {
     },
 	
 	encodeArray: function(arr) {
-		return btoa(String.fromCharCode.apply(null, arr));
+		var binary = '';
+		for (var i = 0; i<arr.length; i++){
+			binary += String.fromCharCode.apply(arr[i]);
+		}
+		return btoa(binary);
 	},
 	
 	decodeArray: function(str) {
